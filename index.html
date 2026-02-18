@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Avances Médicos</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* TITULO CON ANIMACIÓN */
+        .titulo {
+            background: green;
+            color: black;
+            text-align: center;
+            padding: 15px;
+            font-size: 26px;
+            font-weight: bold;
+            animation: moverTitulo 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes moverTitulo {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .contenedor {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .menu {
+            background: #00cc00;
+            width: 30%;
+            padding: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            color: black;
+        }
+
+        .menu a:hover {
+            background: #99ff99;
+        }
+
+        .informacion {
+            background: #00ff99;
+            width: 70%;
+            padding: 15px;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: none; /* Oculto al inicio */
+        }
+
+        .mensajeBienvenida {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer {
+            background: green;
+            text-align: left;
+            padding: 8px;
+            font-size: 16px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="titulo">
+    AVANCES MÉDICOS HASTA EL DÍA DE HOY
+</div>
+
+<div class="contenedor">
+
+    <div class="informacion">
+
+        <!-- MENSAJE DE BIENVENIDA -->
+        <div class="mensajeBienvenida" id="bienvenida">
+            ¡Bienvenidos! <br>
+            Selecciona un tema del menú.
+        </div>
+
+        <!-- IFRAME -->
+        <iframe name="contenido" id="contenidoFrame"></iframe>
+
+    </div>
+
+    <div class="menu">
+        <h3>MENÚ</h3>
+        <a href="tema1.html" target="contenido">1.- Historia de la Medicina</a>
+        <a href="tema2.html" target="contenido">2.- Vacunas</a>
+        <a href="tema3.html" target="contenido">3.- Cirugía Robótica</a>
+        <a href="tema4.html" target="contenido">4.- Terapia Genética</a>
+        <a href="tema5.html" target="contenido">5.- Inteligencia Artificial</a>
+        <a href="tema6.html" target="contenido">6.- Nanotecnología Médica</a>
+        <a href="tema7.html" target="contenido">7.- Trasplantes y Órganos</a>
+        <a href="tema8.html" target="contenido">8.- Salud Digital</a>
+        <a href="tema9.html" target="contenido">9.- Impresión 3D</a>
+        <a href="tema10.html" target="contenido">10.- Futuro de la Medicina</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <strong>Datos del alumno(a):</strong> Luis García Serrano — Grupo 6203 — Materia TICS — Semestre VI
+</div>
+
+<script>
+    const enlaces = document.querySelectorAll('.menu a');
+    const bienvenida = document.getElementById('bienvenida');
+    const iframe = document.getElementById('contenidoFrame');
+
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', function() {
+            bienvenida.style.display = 'none';
+            iframe.style.display = 'block';
+        });
+    });
+</script>
+
+</body>
+</html>
+
